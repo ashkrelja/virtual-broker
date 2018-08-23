@@ -12,9 +12,34 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{%}"
+    <link rel="stylesheet" href="{% static 'virtual_broker/css/master.css' %}">
+
   </head>
+  <nav class='navbar mynav' role='navigation' id='navbar'>
+    <div class="container">
+      <a href="{% url 'home' %}">Virtual Broker</a>
+      <ul class='nav navbar-nav navbar-right'>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
+        {% else %}
+          <li><a href="{% url 'accounts:login' %}">Log In</a></li>
+          <li><a href="{% url 'accounts:signup' %}">Sign Up</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
   <body>
 
+    <div class="container mycontent">
+
+      {% block content %}
+
+      {% endblock %}
+
+    </div>
+
   </body>
+  <script type="text/javascript" src="{% static 'simplesocial/js/master.js' %}">
+  </script>
 </html>
