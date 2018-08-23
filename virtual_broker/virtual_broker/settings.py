@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
     'accounts'
 ]
 
@@ -81,7 +82,7 @@ DATABASES = {
         'USER':'mydatabaseuser',
         'PASSWORD':'Economics3',
         'HOST':'127.0.0.1',
-        'PORT':'5432'        
+        'PORT':'5432'
     }
 }
 
