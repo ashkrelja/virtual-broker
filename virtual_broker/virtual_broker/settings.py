@@ -56,7 +56,7 @@ ROOT_URLCONF = 'virtual_broker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'virtual_broker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
-        'USER':'mydatabaseuser',
+        'NAME': 'virtual_broker', #database name created in pgAdmin4
+        'USER':'postgres',
         'PASSWORD':'Economics3',
-        'HOST':'127.0.0.1',
-        'PORT':'5432'
+        'HOST':'',
+        'PORT':''
     }
 }
 

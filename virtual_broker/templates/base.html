@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -17,7 +18,7 @@
   </head>
   <nav class='navbar mynav' role='navigation' id='navbar'>
     <div class="container">
-      <a href="{% url 'home' %}">Virtual Broker</a>
+      <a class='navbar-brand mynav' href="{% url 'home' %}">Virtual Broker</a>
       <ul class='nav navbar-nav navbar-right'>
         {% if user.is_authenticated %}
           <li><a href="{% url 'accounts:logout' %}">Log Out</a></li>
