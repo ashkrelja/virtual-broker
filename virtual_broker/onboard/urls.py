@@ -1,8 +1,10 @@
 from django.conf.urls import url
 
-from onboard.forms import LicenseForm, IncomeForm
-from onboard.views import OnboardWizard
+from . import forms
+from . import views
 
-urlpatters = [
-    url(r'^contact/$', ContactWizard.as_view([LicenseForm, IncomeForm]), name='onboarding'),
+app_name = 'onboard'
+
+urlpatterns = [
+    url(r'^new/$', views.OnboardWizard.as_view([forms.LicenseForm, forms.IncomeForm]), name='create')
 ]

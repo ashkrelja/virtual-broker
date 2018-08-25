@@ -14,5 +14,5 @@ class OnboardWizard(SessionWizardView):
 
     def done(self, form_list, **kwargs):
         return render(self.request, 'done.html', {
-            'form_data' : [form.cleaned_data for form in form_list],
+            'form_data' : [form.cleaned_data for form in form_list]
             })
