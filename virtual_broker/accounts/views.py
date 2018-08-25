@@ -8,5 +8,5 @@ from . import forms
 # Create your views here.
 class SignUp(CreateView):
     form_class = forms.UserCreateForm
-    success_url = reverse_lazy('login') #temporary - will redirect to "license" application
+    success_url = reverse_lazy('onboard:onboarding', kwargs={'onboard' : 'onboard.html'}) #temporary - will redirect to "license" application
     template_name = 'accounts/signup.html'

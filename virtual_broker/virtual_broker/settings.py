@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
-    'accounts'
+    'formtools', #install form tool app in order to utilize WiziardView
+    'accounts',
+    'onboard'
 ]
 
 MIDDLEWARE = [
