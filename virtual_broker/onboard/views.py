@@ -13,6 +13,6 @@ class OnboardWizard(SessionWizardView):
     template_name = 'onboard/onboard.html' #uses same html for each form
 
     def done(self, form_list, **kwargs):
-        return render(self.request, 'done.html', {
+        return render(self.request, 'onboard/done.html', {
             'form_data' : [form.cleaned_data for form in form_list]
             })
