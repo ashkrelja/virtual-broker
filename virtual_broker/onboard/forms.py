@@ -1,16 +1,19 @@
 from django import forms
 from django.contrib.auth import get_user_model
+from models import Onboard
 
-class LicenseForm(forms.Form):
-    first_name = forms.CharField(max_length=255)
-    last_name = forms.CharField(max_length=255)
-    address = forms.CharField(max_length=255)
-    city = forms.CharField(max_length=255)
-    state = forms.CharField(max_length=255)
-    zip = forms.CharField(max_length=255)
+class LicenseForm(forms.ModelForm):
 
     class Meta:
-        model = get_user_model()
+        model = Onboard
+        fields = [
+            'first_name',
+            'last_name',
+            'address',
+            'city',
+            'state',
+            'zip'
+        ]
 
     def __init__(self,*args,**kwargs):
         super(LicenseForm,self).__init__(*args,**kwargs)
@@ -21,11 +24,13 @@ class LicenseForm(forms.Form):
         self.fields['state'].label = 'State'
         self.fields['zip'].label = 'Zip'
 
-class IncomeForm(forms.Form):
-    income = forms.CharField(max_length=255)
+class IncomeForm(forms.ModelForm):
 
     class Meta:
-        model = get_user_model()
+        model = Onboard
+        fields = [
+            'income'
+        ]
 
     def __init__(self,*args,**kwargs):
         super(IncomeForm,self).__init__(*args,**kwargs)
