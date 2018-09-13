@@ -9,8 +9,6 @@ from django.contrib.auth import get_user_model
 from braces.views import SelectRelatedMixin
 from models import Onboard
 
-# User = get_user_model()
-
 # Create your views here.
 
 class OnboardWizard(LoginRequiredMixin, SelectRelatedMixin, SessionWizardView):

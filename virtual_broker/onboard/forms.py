@@ -29,9 +29,11 @@ class IncomeForm(forms.ModelForm):
     class Meta:
         model = Onboard
         fields = [
-            'income'
+            'income',
+            'debts'
         ]
 
     def __init__(self,*args,**kwargs):
         super(IncomeForm,self).__init__(*args,**kwargs)
         self.fields['income'].label = 'Monthly Income'
+        self.fields['debts'].label = 'Monthly Debt'
